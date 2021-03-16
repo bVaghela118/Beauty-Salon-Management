@@ -1,0 +1,49 @@
+.container {
+  position: relative;
+  width: 100;
+  max-width: 1000px;
+}
+
+.container .img {
+  width:1500;
+  height: 100%;
+}
+
+.container .btn {
+  position: absolute;
+  top: 55%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: transparent;
+  color: white;
+  font-size: 30px;
+  font-color: rgba(85, 22, 187, 0.87);
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.container .btn:hover {
+  background-color: black;
+}
+
+.centered {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  font-size:40px;
+
+}
+.ml3 {
+  font-weight: 900;
+  font-size: 3.5em;
+}
+.centered .b{
+  position:absolute;
+  white-space: nowrap;
+  animation: floatText 5s infinite alternate ease-in-out;
+}

@@ -1,0 +1,298 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Site Metas -->
+    <title>SMBarber - Responsive HTML5 Template</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+    <link rel="stylesheet" href="{%static 'css/cart.css'%}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Colors CSS -->
+    <link rel="stylesheet" href="{% static 'css/colors.css' %}">
+    <!-- ALL VERSION CSS -->
+    <link rel="stylesheet" href="{% static 'css/versions.css' %}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/prettyPhoto.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/loading.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+     <style>
+        
+         * {font-family: Helvetica Neue, Arial, sans-serif; }
+
+        body { background-image: linear-gradient(#aaa 25%, #000); font-color: white;}
+
+        h1, table { text-align: center; }
+
+        h1{ font-size:x-large ; font-weight: 600; font-style: unset;}
+        table {border-collapse: collapse;  width: 70%; margin: 0 auto 5rem;}
+
+        th, td { padding: 1.5rem; font-size: 1.3rem; }
+
+        tr {background: hsl(50, 50%, 80%); }
+
+        tr, td { transition: .4s ease-in; } 
+        td{ font-size: medium; font-style:oblique;}
+
+        tr:first-child {background: hsla(12, 100%, 40%, 0.5); }
+
+        tr:nth-child(even) { background: hsla(50, 50%, 80%, 0.7); }
+
+        td:empty {background: hsla(50, 25%, 60%, 0.7); }
+
+        tr:hover:not(#firstrow), tr:hover td:empty {background: #DE3163; pointer-events: visible;}
+        tr:hover:not(#firstrow) { transform: scale(1.2); font-weight: 700; box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.5);}
+
+  
+         
+
+
+            
+     </style>
+
+</head>
+<body class="barber_version">
+
+<!-- LOADER -->
+<div id="preloader">
+    <div class="cube-wrapper">
+        <div class="cube-folding">
+            <span class="leaf1"></span>
+            <span class="leaf2"></span>
+            <span class="leaf3"></span>
+            <span class="leaf4"></span>
+        </div>
+        <span class="loading" data-name="Loading">KALLISTAA Loading</span>
+    </div>
+</div><!-- end loader -->
+<!-- END LOADER -->
+
+<div id="wrapper">
+
+    <!-- Sidebar-wrapper -->
+    <div id="sidebar-wrapper">
+        <div class="side-top-left">
+            <div class="logo-sidebar">
+                <a href="index.html"><img src="{%static 'images/logos/logo.png'%}" width="280" alt="image"></a>
+                <ul class="sidebar-nav">
+                    <li class="dropdown">
+
+                        <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i
+                                class="fa fa-fw fa-user"></i><b> {{user.username}} </b><i class="fa fa-fw fa-caret"></i><i
+                                class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            {% if user.is_authenticated %}
+                            <li>
+                                <a tabindex="-1" href="\profile\"
+                                   class="btn btn-light btn-radius btn-brd grd1 effect-1">Profile</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a tabindex="-1" href="\logout\" class="btn btn-light btn-radius btn-brd grd1 effect-1">Logout</a>
+                            </li>
+                            {% else %}
+                            <li>
+                                <a tabindex="-1" href="\login\" class="btn btn-light btn-radius btn-brd grd1 effect-1">Sign
+                                    in</a>
+                            </li>
+                            <li>
+                                <a tabindex="-1" href="\register\"
+                                   class="btn btn-light btn-radius btn-brd grd1 effect-1">Sign Up</a>
+                            </li>
+                            {%endif%}
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="\index\" class="active">Home</a></li>
+                <li><a href="\about\">About Us</a></li>
+                <li><a href="\appointment\">Appointment</a></li>
+                <li><a href="\barbers\">Our Specialist</a></li>
+                <li><a href="\servicecategory\">Our Services Categories</a></li>
+                <li><a href="\membership\">Our Membership</a></li>
+                <li><a href="\package\">Our Packages</a></li>
+                <li><a href="\Gallery\">Gallery</a></li>
+                <li><a href="\Productcategory\">Our Product Categories</a></li>
+                <li><a href="\cartdetails\" class="nav-cart-icon nav-sprite">Add to Cart</a></li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+<!-- End Sidebar-wrapper -->
+<div id="page-content-wrapper">
+    <div class="row">
+        <div class="col-md-12 col-md-offset-1">
+            <div>
+                <fieldset>
+
+                    <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> -->
+                    <h1>User Details</h1>
+                    
+                       <table align="center">
+                        {% if user.is_authenticated%}
+                           <tr id="firestorm"><td>User Name: </td>
+                               <td>{{user.username}}</td>
+                           </tr>
+                        <!--<input type="text" name="" id="first_name" class="form-control" placeholder="First Name">-->
+                           <tr>
+                               <td>First Name: </td>
+                               <td>{{user.first_name}}</td>
+                           </tr>
+                        <!--<input type="text" name="" id="first_name" class="form-control" placeholder="First Name">-->
+                           <tr><td>Last Name: </td>
+                            <td>{{user.last_name}}</td>
+                           </tr>
+                        <!--<input type="text" name="last_name" id="last_name" class="form-control" placeholder="Last Name">-->
+                           <tr><td>Email: </td>
+                                <td>{{user.email}}</td>
+                           </tr>
+                       </table><br>
+                     
+                    <div class="text-center">
+
+                        <button class="btn btn-light btn-radius btn-brd grd1 subt text-center"><a href="\change_password\"> <font color="white"> Change Password</font></a>
+                        </button>
+                    </div>
+                   <!-- </div> -->
+                </fieldset>
+                <br>
+                <h1>Your Appointment Details</h1>
+                <form method="post" action="\appointmentcancel\">
+                    {% csrf_token %}
+                    <table align="center">
+                        <tr id="firstrow"> 
+                            <td> Date of Appointment</td>
+                            <td> Time of appointment</td>
+                            <td> Name of Service</td>
+                            <td> Name of Specialist</td>
+                            <td> Click for Cancel Appointment</td>
+                            <td> View Service Invoice </td>
+                        </tr>
+                        {%for i in show%}
+
+                        <tr>
+                            <td> {{i.appointment_date}}</td>
+                            <td> {{i.appointment_time}}</td>
+                            <td> {{i.services_service}}</td>
+                            <td> {{i.specialist_specialist}}</td>
+                            <td><input type="radio" value="{{i.appointment_id}}" name="id" id="raddi" required></td>
+                            <td><button type="button" class="btn btn-light btn-radius"><a href="\serviceinvoice\{{i.appointment_id}}"><font color="white">Click here</font></a> </button> </td>
+                        </tr>
+                        {%endfor%}
+                    </table>
+                    <script type="text/javascript">
+                                            function confirmation(){
+                                                if(document.getElementById("raddi").checked)
+                                                {
+                                                   var value = confirm("Are you sure to cancel this appointment?");
+                                                   if(value == true){
+
+                                                        return true;
+                                                         }else{
+                                                             document.getElementById("raddi").checked = false;
+                                                        return false;
+                                                        }
+                                                }
+                                                else
+                                                {
+                                                    alert("Please select appointment to cancel");
+                                                }
+                                            }
+
+
+                    </script><br>
+                    <div class="text-center">
+                    <button type="submit" class="btn btn-light btn-radius btn-brd grd1 subt" onclick="confirmation()">Cancel Appointment
+                    </button>
+                        </div>
+                </form>
+                <h1>Your Order summary</h1>
+                <table align="center">
+                    <tr id="firstrow">
+                        <td>Product Name</td>
+                        <td>Product Image</td>
+                        <td>Product Qty</td>
+                        <td>Total Price</td>
+                        <td>Payment Mode</td>
+                        <td>Deliver Address and Date</td>
+<!--                        <td>View Order Invoice</td>-->
+                    </tr>
+                    {%for i in order%}
+                    <tr>
+                        <td>{{i.product_product}}</td>
+                        <td><img src="{{i.product_product.product_url.url}}" alt="Not available" height="130" width="120"></td>
+                        <td>{{i.qty_order}}</td>
+                        <td>{{i.sales_price}}</td>
+                        <td>{{i.sales_sales.payment}}</td>
+                        <td>{{i.sales_sales.sales_date}}<br>{{i.sales_sales.phone}}<br>{{i.sales_sales.address}},{{i.sales_sales.city}}:{{i.sales_sales.pincode}}
+                        </td>
+<!--                        <td><button type="button" class="btn btn-light btn-radius"><a href="\invoice\{{i.sales_sales}}"><font color="white">View Invoice</font></a></button></td>-->
+                    </tr>
+                    {%endfor%}
+                    {% endif%}
+                </table>
+            </div>
+
+
+<a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+<!-- ALL JS FILES -->
+<script src="{% static 'js/all.js' %}"></script>
+<script src="{% static 'js/responsive-tabs.js' %}"></script>
+<!-- ALL PLUGINS -->
+<script src="{% static 'js/custom.js' %}"></script>
+<link href="{% static 'style.css '%}" rel="stylesheet">
+
+<script src="{% static 'https://code.jquery.com/jquery-3.4.1.slim.min.js'%}"></script>
+<script src="{% static 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'%}"></script>
+<script src="{% static 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js'%}"></script>
+<!-- Menu Toggle Script -->
+<script>
+    (function($) {
+        "use strict";
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+        smoothScroll.init({
+            selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
+            selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
+            speed: 500, // Integer. How fast to complete the scroll in milliseconds
+            easing: 'easeInOutCubic', // Easing pattern to use
+            offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
+            callback: function ( anchor, toggle ) {} // Function to run after scrolling
+        });
+    })(jQuery);
+
+</script>
+
+</body>
+</html>

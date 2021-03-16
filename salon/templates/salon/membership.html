@@ -1,0 +1,207 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Site Metas -->
+    <title>KALLISTAA</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Colors CSS -->
+    <link rel="stylesheet" href="{% static 'css/colors.css' %}">
+    <!-- ALL VERSION CSS -->
+    <link rel="stylesheet" href="{% static 'css/versions.css' %}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/prettyPhoto.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/loading.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="barber_version">
+
+<!-- LOADER -->
+<div id="preloader">
+    <div class="cube-wrapper">
+        <div class="cube-folding">
+            <span class="leaf1"></span>
+            <span class="leaf2"></span>
+            <span class="leaf3"></span>
+            <span class="leaf4"></span>
+        </div>
+        <span class="loading" data-name="Loading">KALLISTAA Loading</span>
+    </div>
+</div><!-- end loader -->
+<!-- END LOADER -->
+
+<div id="wrapper">
+
+    <!-- Sidebar-wrapper -->
+    <div id="sidebar-wrapper">
+        <div class="side-top-left">
+            <div class="logo-sidebar">
+                    <a href="\index\"><img src="{%static 'images/logos/logo.png'%}" width="285" alt="image"></a><br>
+<!--                    <a href="\profile\"><i class="fa fa-fw fa-user" style="background-color:white; width:40px; hight:80px"><br>My Profile</i></a>-->
+<!--                    <div class="nav-collapse collapse">-->
+                         <ul class="sidebar-nav">
+                            <li class="dropdown">
+
+                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-fw fa-user"></i><b> {{user.username}} </b><i class="fa fa-fw fa-caret"></i><i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown-menu">
+                                    {% if user.is_authenticated %}
+                                    <li>
+                                        <a tabindex="-1" href="\profile\" class="btn btn-light btn-radius btn-brd grd1 effect-1">Profile</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a tabindex="-1" href="\logout\" class="btn btn-light btn-radius btn-brd grd1 effect-1">Logout</a>
+                                    </li>
+                                    {% else %}
+                                    <li>
+                                        <a tabindex="-1" href="\login\" class="btn btn-light btn-radius btn-brd grd1 effect-1">Sign in</a>
+                                    </li>
+                                    <li>
+                                        <a tabindex="-1" href="\register\" class="btn btn-light btn-radius btn-brd grd1 effect-1">Sign Up</a>
+                                    </li>
+                                    {%endif%}
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+				<ul class="sidebar-nav">
+					<li><a  href="\index\" >Home</a></li>
+					<li><a href="\about\">About Us</a></li>
+                    <li><a href="\appointment\">Appointment</a></li>
+                    <li><a href="\barbers\">Our Specialist</a></li>
+                    <li><a href="\servicecategory\">Our Services Categories</a></li>
+                    <li><a href="\membership\" class="active">Our Membership</a></li>
+                    <li><a href="\package\">Our Packages</a></li>
+                    <li><a href="\Gallery\">Gallery</a></li>
+                    <li><a href="\Productcategory\">Our Product Categories</a></li>
+                    <li ><a href="\cartdetails\" class ="nav-cart-icon nav-sprite">Add to Cart</a></li>
+				</ul>
+
+        </div>
+    </div>
+    <div class="section lb">
+        <div class="container-fluid">
+            <div class="section-title row text-center">
+                <div class="col-md-8 col-md-offset-2">
+                    <small>see our membership details</small>
+                    <h3>OUR Membership Types</h3>
+                    <hr class="grd1">
+                    <p class="lead">
+                        ....................................................................................................................</p>
+                </div>
+            </div>
+        </div>
+        <!-- End Sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+
+        {% for i in members%}
+            <div class="col-md-3 col-sm-5 col-xs-12">
+                <div class="service-widget">
+                    <div class="post-media wow fadeIn">
+                        <div>
+                        <form action="\takemembership\{{i.membership_type_id}}">
+
+                                <table border="3 groove" align="center">
+                                    <tr bgcolor="#D2B442">
+                                        <td colspan="5"><font color="black"><b><u>Membership Name</u></b>
+                                            <br>
+                                            <h4>>> <b>{{i.membership_name}}</b> <<</h4></font>
+                                        </td>
+
+
+                                    </tr>
+                                    <tr>
+
+                                        <td><font color="black"><b>Membership duration is
+                                            {{i.membership_duration}} months.</b></font></td>
+
+                                    </tr>
+
+                                    <tr bgcolor="#D2B442">
+
+                                        <td colspan="3"><font color="black"><b>Membership Fees <i
+                                                class="fa fa-rupee"></i> {{i.membership_fees}} only.</b></font></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2"><font color="red"><b>Only {{i.payment_type}} acceptable.</b></font></td>
+                                    </tr>
+                                    {% if user.is_authenticated%}
+                                   <tr bgcolor="#D2B442">
+                                       <td colspan="2" align="center"><button type="submit" class="btn-brd grd1"><font color="white"><b>Take Now</b></font></button></td>
+                                   </tr>
+                                    {% endif%}
+
+                                    <br>
+                                    <br>
+
+                                </table>
+                        </form>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+            <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+            <!-- ALL JS FILES -->
+            <script src="{% static 'js/all.js' %}"></script>
+            <script src="{% static 'js/responsive-tabs.js' %}"></script>
+            <!-- ALL PLUGINS -->
+            <script src="{% static 'js/custom.js' %}"></script>
+
+            <!-- Menu Toggle Script -->
+            <script>
+    (function($) {
+        "use strict";
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+        smoothScroll.init({
+            selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
+            selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
+            speed: 500, // Integer. How fast to complete the scroll in milliseconds
+            easing: 'easeInOutCubic', // Easing pattern to use
+            offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
+            callback: function ( anchor, toggle ) {} // Function to run after scrolling
+        });
+    })(jQuery);
+
+
+            </script>
+
+</body>
+</html>

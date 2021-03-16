@@ -1,0 +1,32 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+	<meta charset="utf-8">
+	<title>Registration Form</title>
+	<link rel="stylesheet" href="{%static 'css/logincss.css'%}">
+   </head>
+   <body>
+	<form class="box" action="" method="post">
+		{% csrf_token %}
+		<div class="loginbox">
+			<img src="{% static 'images/avatar.png' %}" class="avatar">
+	  		 <h1>SIGN UP</h1>
+		<input type="text" name="first_name" placeholder="First name" required><br>
+		<input type="text" name="last_name" placeholder="Last name" required><br>
+		<input type="text" name="username" placeholder="username" required/><br>
+		<input type="password" name="password1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Password" max="8" min="8" required/><br>
+		<input type="password" name="password2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Confirm Password" max="8" min="8" required/><br>
+<!--		<input type="number" name="contact" placeholder="Contact Number" required/><br>-->
+		<input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" placeholder="email" required/><br>
+		<input type="submit" value="Submit"/>
+			 <a href="\login\"><h3>Already have an Account? Click here.</h3></a>
+		<div id="box">
+			{%for message in messages%}
+			<h3>{{message}}</h3>
+			{%endfor%}
+		</div>
+		</div>
+	</form>
+   </body>
+</html>

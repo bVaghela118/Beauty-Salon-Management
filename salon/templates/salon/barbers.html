@@ -1,0 +1,396 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+ 
+     <!-- Site Metas -->
+    <title>SMBarber - Responsive HTML5 Template</title>  
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="{%static 'images/favicon.ico'%}" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="{%static 'images/apple-touch-icon.png'%}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <!-- Colors CSS -->
+    <link rel="stylesheet" href="{%static 'css/colors.css'%}">
+    <!-- ALL VERSION CSS -->
+    <link rel="stylesheet" href="{%static 'css/versions.css'%}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{%static 'css/responsive.css'%}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{%static 'css/custom.css'%}">
+     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/prettyPhoto.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/loading.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="barber_version">
+
+    <!-- LOADER -->
+    <div id="preloader">
+        <div class="cube-wrapper">
+		  <div class="cube-folding">
+			<span class="leaf1"></span>
+			<span class="leaf2"></span>
+			<span class="leaf3"></span>
+			<span class="leaf4"></span>
+		  </div>
+		  <span class="loading" data-name="Loading">KALLISTAA Loading</span>
+		</div>
+    </div><!-- end loader -->
+    <!-- END LOADER -->
+
+    <div id="wrapper">
+
+        <!-- Sidebar-wrapper -->
+        <div id="sidebar-wrapper">
+			<div class="side-top-left">
+				<div class="logo-sidebar">
+					<a href="\index\"><img src="{% static 'images/logos/logo.png'%}" width="285" alt="image"></a>
+				 <ul class="sidebar-nav">
+                            <li class="dropdown">
+
+                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-fw fa-user"></i><b> {{user.username}} </b><i class="fa fa-fw fa-caret"></i><i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a tabindex="-1" href="\profile\" class="btn btn-light btn-radius btn-brd grd1 effect-1">Profile</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a tabindex="-1" href="\logout\" class="btn btn-light btn-radius btn-brd grd1 effect-1">Logout</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+				<ul class="sidebar-nav">
+					<li><a  href="\index\">Home</a></li>
+					<li><a href="\about\">About Us</a></li>
+                    <li><a href="\barbers\" class="active">Our Specialist</a></li>
+                    <li><a href="\appointment\" >Appointment</a></li>
+                    <li><a href="\servicecategory\">Our Services Categories</a></li>
+<!--                    <li><a href="\service\">Our Services</a></li>-->
+                    <li><a href="\Gallery\">Gallery</a></li>
+                   <li><a href="\Productcategory\">Our Product Categories</a></li>
+                    <li><a href="\package\">Our Packages</a></li>
+<!--                    <li><a href="\contact\">Contact</a></li>-->
+<!--                    <li><a href="\login\">Login</a></li>-->
+                    <li><a href="\register\">Register</a></li>
+<!--                    <li><a href="\logout\">Logout</a></li>-->
+                    <li ><a href="\cartdetails\" class ="nav-cart-icon nav-sprite">Add to Cart</a></li>
+<!--                    <a href="cart.html" aria-label="0 items in cart" class="nav-a nav-a-2" id="nav-cart" tabindex="26">-->
+<!--                 <span aria-hidden="true" class="nav-line-1"></span>-->
+<!--                    <span aria-hidden="true" class="nav-line-2">Cart<span class="nav-icon nav-arrow"></span>-->
+<!--                   </span>-->
+<!--                    <span class="nav-cart-icon nav-sprite"></span>-->
+<!--                 <span id="nav-cart-count" aria-hidden="true" class="nav-cart-count nav-cart-0">0</span>-->
+<!--  </a>-->
+				</ul>
+			</div>
+        </div>
+        <!-- End Sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <a href="#menu-toggle" class="menuopener" id="menu-toggle"><i class="fa fa-bars"></i></a>
+			
+            <div class="all-page-bar">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12">
+							<div class="title title-1 text-center">
+								<div class="title--heading">
+									<h1>Our Specialist</h1>
+								</div>
+								<div class="clearfix"></div>
+								<ol class="breadcrumb">
+									<li><a href="\index\">Home</a></li>
+									<li class="active">Our Specialist</li>
+								</ol>
+								<div class="much">
+									<img src="{%static 'uploads/mustache.png'%}" alt=""/>
+								</div>
+							</div>
+							<!-- .title end -->
+						</div>
+					</div>
+				</div>
+			</div><!-- end all-page-bar -->
+
+            <section class="section nopad cac text-center">
+                <a href="#"><h3>Interesting our awesome barber services? Just drop an appointment form below!</h3></a>
+            </section>
+
+            <div id="barbers" class="section lb">
+                <div class="container-fluid">
+                    <div class="section-title row text-center">
+                        <div class="col-md-8 col-md-offset-2">
+                        <small>MEET OUR SPECIALIST TEAM</small>
+                        <h3>OUR SPECIALIST</h3>
+                        <hr class="grd1">
+<!--                        <p class="lead">Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus. Sed a tellus quis mi rhoncus dignissim.</p>-->
+                        </div>
+                    </div><!-- end title -->
+                <form method="post">
+
+                    <div class="row dev-list text-center">
+                        {% for i in specialist_image %}
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.2s">
+
+                            <div class="widget clearfix">
+								<div class="hover-br">
+									<img src="{{i.specialist_image.url}}" alt="Not Found" class="img-responsive"/>
+									<div class="social-up-hover">
+										<div class="footer-social">
+                                            <h4><b>{{i.specialist_name}}</b></h4>
+										</div>
+									</div>
+                                    </div>
+                                   <h4><label>Specialist in : {{i.service_categories_service_categories_no1}}</label></h4>
+                            </div>
+                        </div>
+                            {%endfor%}
+                                <!--                                <div class="widget-title">-->
+                                <!--                                    <h3>{{specialist_name}}</h3>-->
+<!--                                    <small>The Founder</small>-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash; end title &ndash;&gt;-->
+<!--                                <p>Hello guys, I am Soren from Sirbistana. I am senior art director and founder of The Barber Shop Company.</p>-->
+
+<!--                                -->
+<!--                            </div>&lt;!&ndash;widget &ndash;&gt;-->
+<!--                        </div>&lt;!&ndash; end col &ndash;&gt;-->
+
+<!--                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">-->
+<!--                            <div class="widget clearfix">-->
+<!--								<div class="hover-br">-->
+<!--									<img src="{% static 'uploads/barber_team_03.jpg'%}" alt="" class="img-responsive">-->
+<!--									<div class="social-up-hover">-->
+<!--										<div class="footer-social">-->
+<!--											<a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>-->
+<!--											<a href="#" class="btn grd1"><i class="fa fa-github"></i></a>-->
+<!--											<a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>-->
+<!--											<a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>-->
+<!--										</div>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--                                <div class="widget-title">-->
+<!--                                    <h3>Bryan Saftler</h3>-->
+<!--                                    <small>The Barber</small>-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash; end title &ndash;&gt;-->
+<!--                                <p>Hello guys, I am Soren from Sirbistana. I am senior art director and barber of the Barber Shop Market.</p>-->
+<!--                            </div>&lt;!&ndash;widget &ndash;&gt;-->
+<!--                        </div>&lt;!&ndash; end col &ndash;&gt;-->
+
+<!--                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">-->
+<!--                            <div class="widget clearfix">-->
+<!--								<div class="hover-br">-->
+<!--									<img src="{% static 'uploads/barber_team_02.jpg'%}" alt="" class="img-responsive">-->
+<!--									<div class="social-up-hover">-->
+<!--										<div class="footer-social">-->
+<!--											<a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>-->
+<!--											<a href="#" class="btn grd1"><i class="fa fa-github"></i></a>-->
+<!--											<a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>-->
+<!--											<a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>-->
+<!--										</div>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--                                <div class="widget-title">-->
+<!--                                    <h3>Matthew Bayliss</h3>-->
+<!--                                    <small>The Barber</small>-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash; end title &ndash;&gt;-->
+<!--                                <p>Hello guys, I am Soren from Sirbistana. I am senior art director and barber of the Barber Shop Website.</p>-->
+<!--                            </div>&lt;!&ndash;widget &ndash;&gt;-->
+<!--                        </div>&lt;!&ndash; end col &ndash;&gt;-->
+<!--						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">-->
+<!--                            <div class="widget clearfix">-->
+<!--								<div class="hover-br">-->
+<!--									<img src="{% static 'uploads/barber_team_01.jpg'%}" alt="" class="img-responsive">-->
+<!--									<div class="social-up-hover">-->
+<!--										<div class="footer-social">-->
+<!--											<a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>-->
+<!--											<a href="#" class="btn grd1"><i class="fa fa-github"></i></a>-->
+<!--											<a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>-->
+<!--											<a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>-->
+<!--										</div>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--                                <div class="widget-title">-->
+<!--                                    <h3>Soren Bo Bostian</h3>-->
+<!--                                    <small>The Founder</small>-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash; end title &ndash;&gt;-->
+<!--                                <p>Hello guys, I am Soren from Sirbistana. I am senior art director and founder of The Barber Shop Company.</p>-->
+<!--                            </div>&lt;!&ndash;widget &ndash;&gt;-->
+<!--                        </div>&lt;!&ndash; end col &ndash;&gt;-->
+
+<!--                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">-->
+<!--                            <div class="widget clearfix">-->
+<!--								<div class="hover-br">-->
+<!--									<img src="{% static 'uploads/barber_team_03.jpg'%}" alt="" class="img-responsive">-->
+<!--									<div class="social-up-hover">-->
+<!--										<div class="footer-social">-->
+<!--											<a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>-->
+<!--											<a href="#" class="btn grd1"><i class="fa fa-github"></i></a>-->
+<!--											<a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>-->
+<!--											<a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>-->
+<!--										</div>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--                                <div class="widget-title">-->
+<!--                                    <h3>Bryan Saftler</h3>-->
+<!--                                    <small>The Barber</small>-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash; end title &ndash;&gt;-->
+<!--                                <p>Hello guys, I am Soren from Sirbistana. I am senior art director and barber of the Barber Shop Market.</p>-->
+<!--                            </div>&lt;!&ndash;widget &ndash;&gt;-->
+<!--                        </div>&lt;!&ndash; end col &ndash;&gt;-->
+
+<!--                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">-->
+<!--                            <div class="widget clearfix">-->
+<!--								<div class="hover-br">-->
+<!--									<img src="{% static 'uploads/barber_team_02.jpg'%}" alt="" class="img-responsive">-->
+<!--									<div class="social-up-hover">-->
+<!--										<div class="footer-social">-->
+<!--											<a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>-->
+<!--											<a href="#" class="btn grd1"><i class="fa fa-github"></i></a>-->
+<!--											<a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>-->
+<!--											<a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>-->
+<!--										</div>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--                                <div class="widget-title">-->
+<!--                                    <h3>Matthew Bayliss</h3>-->
+<!--                                    <small>The Barber</small>-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash; end title &ndash;&gt;-->
+<!--                                <p>Hello guys, I am Soren from Sirbistana. I am senior art director and barber of the Barber Shop Website.</p>-->
+<!--                            </div>&lt;!&ndash;widget &ndash;&gt;-->
+<!--                        </div>&lt;!&ndash; end col &ndash;&gt;-->
+<!--                    </div>&lt;!&ndash; end row &ndash;&gt;-->
+<!--                </form>-->
+<!--                </div>&lt;!&ndash; end container &ndash;&gt;-->
+<!--            </div>&lt;!&ndash; end section &ndash;&gt;-->
+
+<!--            <div id="testimonials" class="parallax section db parallax-off" style="background-image:url('/static/uploads/parallax_20.jpg');">-->
+<!--                <div class="container-fluid">-->
+<!--                    <div class="section-title row text-center">-->
+<!--                        <div class="col-md-8 col-md-offset-2">-->
+<!--                        <small>LET'S SEE OUR TESTIMONIALS</small>-->
+<!--                        <h3>HAPPY TESTIMONIALS</h3>-->
+<!--                        <hr class="grd1">-->
+<!--                        <p class="lead">Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus. Sed a tellus quis mi rhoncus dignissim.</p>-->
+<!--                        </div>-->
+<!--                    </div>&lt;!&ndash; end title &ndash;&gt;-->
+
+<!--                    <div class="row">-->
+<!--                        <div class="col-md-12 col-sm-12">-->
+<!--                            <div class="testi-carousel owl-carousel owl-theme">                                -->
+<!--                                <div class="testimonial clearfix">-->
+<!--                                    <div class="desc">-->
+<!--                                        <h3><i class="fa fa-quote-left"></i> Wonderful Support!</h3>-->
+<!--                                        <p class="lead">They have got my project on time with the competition with a sed highly skilled, and experienced & professional team.</p>-->
+<!--                                    </div>-->
+<!--                                    <div class="testi-meta">-->
+<!--                                        <img src="{% static 'uploads/testi_01.png'%}" alt="" class="img-responsive alignright">-->
+<!--                                        <h4>James Fernando <small>- Manager of Racer</small></h4>-->
+<!--                                    </div>-->
+                                    <!-- end testi-meta -->
+<!--                                </div>-->
+<!--                                &lt;!&ndash; end testimonial &ndash;&gt;-->
+<!--                                <div class="testimonial clearfix">-->
+<!--                                    <div class="desc">-->
+<!--                                        <h3><i class="fa fa-quote-left"></i> Awesome Services!</h3>-->
+<!--                                        <p class="lead">Explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you completed.</p>-->
+<!--                                    </div>-->
+<!--                                    <div class="testi-meta">-->
+<!--                                        <img src="{% static 'uploads/testi_02.png'%}" alt="" class="img-responsive alignright">-->
+<!--                                        <h4>Jacques Philips <small>- Designer</small></h4>-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash; end testi-meta &ndash;&gt;-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash; end testimonial &ndash;&gt;-->
+<!--                                <div class="testimonial clearfix">-->
+<!--                                    <div class="desc">-->
+<!--                                        <h3><i class="fa fa-quote-left"></i> Great & Talented Team!</h3>-->
+<!--                                        <p class="lead">The master-builder of human happines no one rejects, dislikes avoids pleasure itself, because it is very pursue pleasure. </p>-->
+<!--                                    </div>-->
+<!--                                    <div class="testi-meta">-->
+<!--                                        <img src="{% static 'uploads/testi_03.png'%}" alt="" class="img-responsive alignright">-->
+<!--                                        <h4>Venanda Mercy <small>- Newyork City</small></h4>-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash; end testi-meta &ndash;&gt;-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash; end testimonial &ndash;&gt;-->
+<!--								<div class="testimonial clearfix">-->
+<!--                                    <div class="desc">-->
+<!--                                        <h3><i class="fa fa-quote-left"></i> Great & Talented Team!</h3>-->
+<!--                                        <p class="lead">The master-builder of human happines no one rejects, dislikes avoids pleasure itself, because it is very pursue pleasure. </p>-->
+<!--                                    </div>-->
+<!--                                    <div class="testi-meta">-->
+<!--                                        <img src="{% static 'uploads/testi_03.png'%}" alt="" class="img-responsive alignright">-->
+<!--                                        <h4>Venanda Mercy <small>- Newyork City</small></h4>-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash; end testi-meta &ndash;&gt;-->
+<!--                                </div>-->
+                                <!-- end testimonial -->
+                            </div><!-- end carousel -->
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+                </div><!-- end container -->
+            </div><!-- end section -->
+
+
+
+    <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+    <!-- ALL JS FILES -->
+    <script src="{% static 'js/all.js'%}"></script>
+	<script src="{% static 'js/responsive-tabs.js'%}"></script>
+    <!-- ALL PLUGINS -->
+    <script src="{% static 'js/custom.js'%}"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    (function($) {
+        "use strict";
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+        smoothScroll.init({
+            selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
+            selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
+            speed: 500, // Integer. How fast to complete the scroll in milliseconds
+            easing: 'easeInOutCubic', // Easing pattern to use
+            offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
+            callback: function ( anchor, toggle ) {} // Function to run after scrolling
+        });
+    })(jQuery);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+	<meta charset="utf-8">
+	<title>Animated login Form</title>
+	<link rel="stylesheet" href="{%static 'css/logincss.css'%}">
+   </head>
+   <body style="background-image:url('/static/images/bg.png');" >
+	<form class="box" action="" method="post">
+		{% csrf_token %}
+<!--	   <h1>Login</h1>-->
+<!--	   <input type="text" name="username" placeholder="Username"><br>-->
+<!--	   <input type="password" name="password" placeholder="Password"><br>-->
+<!--	   <input type="submit" value="Login">-->
+
+<!--		<a href="\register\">New User?Clickhere</a><br>-->
+<!--		<a href="\password_reset\">Forgot Password?Click here</a>-->
+<!--		<div id="box">-->
+<!--			{%for message in messages%}-->
+<!--			<h3>{{message}}</h3>-->
+<!--			{%endfor%}-->
+<!--		</div>-->
+<!--	</form>-->
+
+				<div class="loginbox">
+					<img src="{% static 'images/avatar.png' %}" width="120" class="avatar">
+					<h1>Login Here</h1>
+						 <p>Username</p>
+						 <input type="text" name="username" placeholder="Username"><br><br>
+						 <p>Password</p>
+	  					 <input type="password" name="password" placeholder="Password"><br><br>
+						 <input type="submit" name="" value="Login"><br>
+						 <a href="\register\"><h3>New User?Clickhere</h3></a>
+<!--					<a href="\password_reset\"><h3>Forgot Password?Click here</h3></a>-->
+
+						<div id="box">
+							{%for message in messages%}
+							<h3>{{message}}</h3>
+							{%endfor%}
+						</div>
+
+				</div>
+	</form>
+   </body>
+</html>

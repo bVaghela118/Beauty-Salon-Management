@@ -1,0 +1,312 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+ 
+     <!-- Site Metas -->
+    <title>KALLISTAA</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" >
+    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Colors CSS -->
+    <link rel="stylesheet" href="{% static 'css/colors.css' %}">
+    <!-- ALL VERSION CSS -->
+    <link rel="stylesheet" href="{% static 'css/versions.css' %}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/prettyPhoto.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/loading.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="barber_version">
+
+    <!-- LOADER -->
+    <div id="preloader">
+        <div class="cube-wrapper">
+		  <div class="cube-folding">
+			<span class="leaf1"></span>
+			<span class="leaf2"></span>
+			<span class="leaf3"></span>
+			<span class="leaf4"></span>
+		  </div>
+		  <span class="loading" data-name="Loading">KALLISTAA Loading</span>
+		</div>
+    </div><!-- end loader -->
+    <!-- END LOADER -->
+
+    <div id="wrapper">
+
+        <!-- Sidebar-wrapper -->
+        <div id="sidebar-wrapper">
+			<div class="side-top-left">
+				<div class="logo-sidebar">
+
+                    <a href="\index\"><img src="{%static 'images/logos/logo.png'%}" width="285" alt="image"></a><br>
+<!--                    <a href="\profile\"><i class="fa fa-fw fa-user" style="background-color:white; width:40px; hight:80px"><br>My Profile</i></a>-->
+<!--                    <div class="nav-collapse collapse">-->
+                         <ul class="sidebar-nav">
+                            <li class="dropdown">
+
+                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-fw fa-user"></i><b> {{user.username}} </b><i class="fa fa-fw fa-caret"></i><i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown-menu">
+                                    {% if user.is_authenticated %}
+                                    <li>
+                                        <a tabindex="-1" href="\profile\" class="btn btn-light btn-radius btn-brd grd1 effect-1">Profile</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a tabindex="-1" href="\logout\" class="btn btn-light btn-radius btn-brd grd1 effect-1">Logout</a>
+                                    </li>
+                                    {% else %}
+                                    <li>
+                                        <a tabindex="-1" href="\login\" class="btn btn-light btn-radius btn-brd grd1 effect-1">Sign in</a>
+                                    </li>
+                                    <li>
+                                        <a tabindex="-1" href="\register\" class="btn btn-light btn-radius btn-brd grd1 effect-1">Sign Up</a>
+                                    </li>
+                                    {%endif%}
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+				<ul class="sidebar-nav">
+					<li><a  href="\index\" class="active">Home</a></li>
+					<li><a href="\about\">About Us</a></li>
+                    <li><a href="\appointment\">Appointment</a></li>
+                    <li><a href="\barbers\">Our Specialist</a></li>
+                    <li><a href="\servicecategory\">Our Services Categories</a></li>
+                    <li><a href="\membership\">Our Membership</a></li>
+                    <li><a href="\package\">Our Packages</a></li>
+                    <li><a href="\Gallery\">Gallery</a></li>
+                    <li><a href="\Productcategory\">Our Product Categories</a></li>
+                    <li ><a href="\cartdetails\" class ="nav-cart-icon nav-sprite">Add to Cart</a></li>
+				</ul>
+
+			 </div>
+        </div>
+        <!-- End Sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <a href="#menu-toggle" class="menuopener" id="menu-toggle"><i class="fa fa-bars"></i></a>
+
+            <div id="home" class="parallax first-section" data-stellar-background-ratio="0.2" style="background-image:url('/static/uploads/barber_slider.png');">
+                <div class="container-fluid">
+                    <div class="row">
+						<div class="owl-carousel owl-theme">
+							<div class="text-center item">
+								<div class="col-md-8 col-md-offset-2 col-sm-12">
+									<div class="big-tagline text-center">
+										<marquee><h2><strong>The KALLISTAA  Beauty & Salon</strong></h2></marquee>
+<!--										<p class="lead">With SMBarber responsive landing page template, you can showcase your next barber shop websites!</p>-->
+										<a href="\appointment\" class="btn btn-light btn-radius btn-brd grd1 effect-1 btn">APPOINTMENT NOW</a>
+									</div>
+								</div>
+							</div>
+<!--							<div class="text-center item">-->
+<!--								<div class="col-md-8 col-md-offset-2 col-sm-12">-->
+<!--									<div class="big-tagline text-center">-->
+<!--										<h2><strong>The Salon Shop</strong></h2>-->
+<!--										<p class="lead">With SMBarber responsive landing page template, you can showcase your next barber shop websites!</p>-->
+<!--										<a href="#" class="btn btn-light btn-radius btn-brd grd1 effect-1 btn">APPOINTMENT NOW</a>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--							<div class="text-center item">-->
+<!--								<div class="col-md-8 col-md-offset-2 col-sm-12">-->
+<!--									<div class="big-tagline text-center">-->
+<!--										<h2><strong>The Barber Shop</strong></h2>-->
+<!--										<p class="lead">With SMBarber responsive landing page template, you can showcase your next barber shop websites!</p>-->
+<!--										<a href="#" class="btn btn-light btn-radius btn-brd grd1 effect-1 btn">APPOINTMENT NOW</a>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--							</div>-->
+						</div>
+                    </div><!-- end row -->
+                </div><!-- end container -->
+            </div><!-- end section -->
+
+            <section class="section nopad cac text-center">
+                <a href="#"><h3>Interesting our awesome barber services? Just drop an appointment form below!</h3></a>
+            </section>
+
+            <div class="section wb">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 text-center">
+                            <div class="message-box">
+                                <h4>About</h4>
+                                <h2>Welcome to KALLISTAA</h2>
+<!--                                <p class="lead">Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus. Sed a tellus quis mi rhoncus dignissim.</p>-->
+
+<!--                                <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus bibendum. Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed vitae rutrum neque. Ut id erat sit amet libero bibendum aliquam. Donec ac egestas libero, eu bibendum risus. Phasellus et congue justo. </p>-->
+
+                                <a href="#services" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Learn More</a>
+                            </div><!-- end messagebox -->
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+
+					<hr class="hr1">
+
+<!--					<div class="row">-->
+<!--						<div class="col-md-12">-->
+<!--							<div class="about-tab">-->
+<!--								<ul class="nav nav-tabs">-->
+<!--									<li class="active"><a href="#tab_a" data-toggle="tab">Our Mission</a></li>-->
+<!--									<li><a href="#tab_b" data-toggle="tab">Why Us?</a></li>-->
+<!--									<li><a href="#tab_c" data-toggle="tab">About Us</a></li>-->
+<!--								</ul>-->
+<!--								<div class="tab-content">-->
+<!--									<div class="tab-pane fade in active" id="tab_a">-->
+<!--&lt;!&ndash;										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi scelerisque tortor mi, eget mattis velit sagittis id. Duis ornare mauris eu eros interdum, vitae finibus arcu ultricies. Donec vitae felis eleifend, dignissim erat a, pretium diam. Donec eu massa odio. Suspendisse et ornare lacus, pharetra imperdiet ligula.</p>&ndash;&gt;-->
+<!--&lt;!&ndash;										<p>Vestibulum ac quam id lorem semper condimentum. Nulla vel ligula turpis. Nullam luctus, mi nec rhoncus gravida, tortor est semper purus, a feugiat sapien odio non urna. Fusce pellentesque neque ut nisi rhoncus imperdiet. Sed eu purus vel turpis consectetur convallis. Donec a dolor tellus. Phasellus dignissim erat nec ipsum condimentum sollicitudin. </p>&ndash;&gt;-->
+<!--									</div>-->
+<!--									<div class="tab-pane fade" id="tab_b">-->
+<!--										<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>-->
+<!--										<ul>-->
+<!--											<li><i class="fa fa-circle-o" aria-hidden="true"></i>User Experince</li>-->
+<!--											<li><i class="fa fa-circle-o" aria-hidden="true"></i>Full Devices</li>-->
+<!--											<li><i class="fa fa-circle-o" aria-hidden="true"></i>Awesome Design</li>-->
+<!--											<li><i class="fa fa-circle-o" aria-hidden="true"></i>Visual Impact</li>-->
+<!--											<li><i class="fa fa-circle-o" aria-hidden="true"></i>100% Sincronized</li>-->
+<!--											<li><i class="fa fa-circle-o" aria-hidden="true"></i>Custom Support</li>-->
+<!--										</ul>-->
+<!--									</div>-->
+<!--									<div class="tab-pane fade" id="tab_c">-->
+<!--										<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>-->
+<!--									</div>-->
+<!--								</div>&lt;!&ndash; tab content &ndash;&gt;-->
+<!--							</div>-->
+<!--						</div>&lt;!&ndash; end col &ndash;&gt;-->
+<!--					</div>&lt;!&ndash; end row &ndash;&gt;-->
+
+                    <hr class="hr1">
+
+                    <div class="row text-center">
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                           <div class="service-widget">
+                                <div class="post-media wow fadeIn">
+                                    <a href="{% static 'uploads/barber_01.jpg' %}" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                                    <img src="{% static 'uploads/barber_01.jpg' %}" alt="" class="img-responsive img-rounded">
+                                </div>
+                                <h3>Show us Your Graft Style</h3>
+                                <p>Aliquam sagittis ligula et sem lacinia, ut facilisis enim sollicitudin. Proin nisi est, convallis nec purus vitae, iaculis posuere sapien. Cum sociis natoque.</p>
+                            </div><!-- end service -->
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="service-widget">
+                                <div class="post-media wow fadeIn">
+                                    <a href="{% static 'uploads/barber_02.jpg' %}" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                                    <img src="{% static 'uploads/barber_02.jpg' %}" alt="" class="img-responsive img-rounded">
+                                </div>
+                                <h3>Outstanding Barber Shop</h3>
+                                <p>Duis at tellus at dui tincidunt scelerisque nec sed felis. Suspendisse id dolor sed leo rutrum euismod. Nullam vestibulum fermentum erat. It nam auctor. </p>
+                            </div><!-- end service -->
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="service-widget">
+                                <div class="post-media wow fadeIn">
+                                    <a href="{% static 'uploads/barber_03.jpg'%}" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                                    <img src="{% static 'uploads/barber_03.jpg' %}" alt="" class="img-responsive img-rounded">
+                                </div>
+                                <h3>The Barber Materials</h3>
+                                <p>Etiam materials ut mollis tellus, vel posuere nulla. Etiam sit amet lacus vitae massa sodales aliquam at eget quam. Integer ultricies et magna quis posuere.</p>
+                            </div><!-- end service -->
+                        </div>
+                    </div><!-- end row -->
+                </div><!-- end container -->
+            </div><!-- end section -->
+
+
+            <div id="testimonials" class="parallax section db parallax-off" style="background-image:url('/static/uploads/parallax_20.jpg');">
+                <div class="container-fluid">
+                    <div class="section-title row text-center">
+                        <div class="col-md-8 col-md-offset-2">
+                        <small>LET'S SEE OUR TESTIMONIALS</small>
+                        <h3>HAPPY TESTIMONIALS</h3>
+                        <hr class="grd1">
+<!--                        <p class="lead">Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus. Sed a tellus quis mi rhoncus dignissim.</p>-->
+                        </div>
+                    </div><!-- end title -->
+
+                    <div class="row">
+                        {% for i in feedback%}
+                        <div class="col-md-12 col-sm-12">
+                            <div class="testi-carousel owl-carousel owl-theme">
+
+                                <div class="testimonial clearfix">
+                                    <div class="desc">
+                                        <h3><i class="fa fa-quote-left"></i>{{i.services_service}}</h3>
+                                        <p class="lead">{{i.feedback_desc}}</p>
+                                    </div>
+                                    <div class="testi-meta">
+                                        <img src="" alt="" class="fa fa-user img-responsive alignright">
+                                        <h4>{{i.auth_user}}<small>- Manager of Racer</small></h4>
+                                    </div>
+                                </div>
+                            </div><!-- end carousel -->
+                        </div><!-- end col -->
+                         {%endfor%}
+                    </div><!-- end row -->
+                </div><!-- end container -->
+            </div><!-- end section -->
+        </div>
+    </div>
+
+
+    <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+    <!-- ALL JS FILES -->
+    <script src="{% static 'js/all.js' %}"></script>
+	<script src="{% static 'js/responsive-tabs.js' %}"></script>
+    <!-- ALL PLUGINS -->
+    <script src="{% static 'js/custom.js' %}"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    (function($) {
+        "use strict";
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+        smoothScroll.init({
+            selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
+            selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
+            speed: 500, // Integer. How fast to complete the scroll in milliseconds
+            easing: 'easeInOutCubic', // Easing pattern to use
+            offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
+            callback: function ( anchor, toggle ) {} // Function to run after scrolling
+        });
+    })(jQuery);
+    </script>
+
+</body>
+</html>

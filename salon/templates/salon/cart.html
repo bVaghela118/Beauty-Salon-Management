@@ -1,0 +1,239 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+     <!-- Site Metas -->
+    <title>SMBarber - Responsive HTML5 Template</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+    <link rel="stylesheet" href="{%static 'css/cart.css'%}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Colors CSS -->
+    <link rel="stylesheet" href="{% static 'css/colors.css' %}">
+    <!-- ALL VERSION CSS -->
+    <link rel="stylesheet" href="{% static 'css/versions.css' %}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/prettyPhoto.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/loading.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="barber_version">
+
+    <!-- LOADER -->
+    <div id="preloader">
+        <div class="cube-wrapper">
+		  <div class="cube-folding">
+			<span class="leaf1"></span>
+			<span class="leaf2"></span>
+			<span class="leaf3"></span>
+			<span class="leaf4"></span>
+		  </div>
+		  <span class="loading" data-name="Loading">KALLISTAA Loading</span>
+		</div>
+    </div><!-- end loader -->
+    <!-- END LOADER -->
+
+    <div id="wrapper">
+        <!-- Sidebar-wrapper -->
+        <div id="sidebar-wrapper">
+			<div class="side-top-left">
+				<div class="logo-sidebar">
+					<a href="\index\"><img src="{%static 'images/logos/logo.png'%}" width="285" alt="image"></a>
+				 <ul class="sidebar-nav">
+                            <li class="dropdown">
+
+                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-fw fa-user"></i><b> {{user.username}} </b><i class="fa fa-fw fa-caret"></i><i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a tabindex="-1" href="\profile\" class="btn btn-light btn-radius btn-brd grd1 effect-1">Profile</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a tabindex="-1" href="\logout\" class="btn btn-light btn-radius btn-brd grd1 effect-1">Logout</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+				<ul class="sidebar-nav">
+					<li><a  href="\index\" >Home</a></li>
+					<li><a href="\about\">About Us</a></li>
+                    <li><a href="\barbers\">Our Specialist</a></li>
+                    <li><a href="\appointment\">Appointment</a></li>
+                    <li><a href="\servicecategory\">Our Services Categories</a></li>
+<!--                    <li><a href="\service\">Our Services</a></li>-->
+                    <li><a href="\Gallery\">Gallery</a></li>
+                   <li><a href="\Productcategory\">Our Product Categories</a></li>
+                    <li><a href="\package\">Our Packages</a></li>
+<!--                    <li><a href="\contact\">Contact</a></li>-->
+<!--                    <li><a href="\login\">Login</a></li>-->
+                    <li><a href="\register\">Register</a></li>
+<!--                    <li><a href="\logout\">Logout</a></li>-->
+                    <li ><a href="\cartdetails\" class ="nav-cart-icon nav-sprite active">Add to Cart</a></li>
+<!--                    <a href="cart.html" aria-label="0 items in cart" class="nav-a nav-a-2" id="nav-cart" tabindex="26">-->
+<!--                 <span aria-hidden="true" class="nav-line-1"></span>-->
+<!--                    <span aria-hidden="true" class="nav-line-2">Cart<span class="nav-icon nav-arrow"></span>-->
+<!--                   </span>-->
+<!--                    <span class="nav-cart-icon nav-sprite"></span>-->
+<!--                 <span id="nav-cart-count" aria-hidden="true" class="nav-cart-count nav-cart-0">0</span>-->
+<!--  </a>-->
+				</ul>
+
+    </div>
+        </div>
+        <!-- End Sidebar-wrapper -->
+            <div >
+                <div >
+                    <div class="section-title row text-center">
+                        <div class="col-md-8 col-md-offset-2">
+                        <h3>ADD TO CART</h3>
+                         <small>see your products cart details</small>
+                            <hr class="grd1">
+                        <p class="lead">....................................................................................................................</p>
+                        </div>
+                    </div>
+                </div>
+
+        <!-- Page Content -->
+     <div id="page-content-wrapper">
+            <a href="#menu-toggle" class="menuopener" id="menu-toggle"><i class="fa fa-bars"></i></a>
+    <div class="cart">
+    <div style="text-align:center; background-color:white">
+<!--      <span class="cart-top-center-title">Checkout</span>-->
+<!--      <div class="cart-top-info">Items</div>-->
+        <h3><font color="black"><b>Check-Out</b></font> </h3>
+    </div>
+    {% for i in product%}
+    <ul>
+<!--         <form action="{% url 'salon:cart' %}" method="post">-->
+<!--                                        {% csrf_token %}-->
+<!--                                        <input type="number" name="pid" value="{{i.product_id}}" hidden>-->
+
+<!--                                        <div class="sp-quantity">-->
+<!--                                            <div class="sp-minus fff"> <a class="ddd" href="#">-</a></div>-->
+<!--                                            <div class="sp-input">-->
+<!--                                                <input type="text" class="quntity-input" name="qty" value="1">-->
+<!--                                            </div>-->
+<!--                                            <div class="sp-plus fff"> <a class="ddd" href="#">+</a></div>-->
+<!--                                        </div>-->
+<!--                                    </form>-->
+      <li class="cart-item">
+        <span class="cart-item-pic">
+          <img src="{{i.product_product.product_url.url}}" height="50%" width="50%">
+        </span>
+            <h5><font color="white"><ul>Name</ul></font></h5>
+          <span class="cart-item-desc">: {{i.product_product}}</span><br>
+           </li><li class="cart-item">
+          <span class="cart-item-qty">Qty :{{i.prod_qty}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="cart-item-qty"><i class="fa fa-rupee"></i> :{{i.product_product.product_price}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=
+        <span class="cart-item-price"><i class="fa fa-rupee"></i>{{i.total_price}}/-</span>
+        </li>
+
+          <div class="cart-bottom-left">
+            {{removecart}}
+         <a href="\removecart\{{i.product_product.product_id}}" class="cart-button">Remove</a>
+         </div>
+    {%endfor%}
+ </ul>
+     <div class="cart-bottom">
+          {% if total is not 0 %}
+         <h3><font color="white">Total of Product </font><span class="cart-item-price"><i class="fa fa-rupee"></i> {{total}}/-</span></h3>
+         {%endif%}
+         {% if total is not 0 and user.is_authenticated%}
+         <a href="\checkout\" class="cart-button" >Continue</a>
+         {% else %}
+         <a href="" class="cart-button" onclick="alerts()">Continue</a>
+         <script type="text/javascript">
+             function alerts()
+             {
+                    alert("Your cart is empty");
+             }
+         </script>
+         {% endif%}
+
+     </div>
+  </div>
+     </div>
+  </div>
+                  </div>
+    </div>
+
+    <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+    <!-- ALL JS FILES -->
+    <script src="{% static 'js/all.js' %}"></script>
+	<script src="{% static 'js/responsive-tabs.js' %}"></script>
+    <!-- ALL PLUGINS -->
+    <script src="{% static 'js/custom.js' %}"></script>
+
+<!--    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" ></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- Menu Toggle Script -->
+    <script>
+    (function($) {
+        "use strict";
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+        smoothScroll.init({
+            selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
+            selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
+            speed: 500, // Integer. How fast to complete the scroll in milliseconds
+            easing: 'easeInOutCubic', // Easing pattern to use
+            offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
+            callback: function ( anchor, toggle ) {} // Function to run after scrolling
+        });
+    })(jQuery);
+     $(".ddd").on("click", function () {
+
+    var $button = $(this),
+        $input = $button.closest('.sp-quantity').find("input.quntity-input");
+    var oldValue = $input.val(),
+        newVal;
+
+    if ($.trim($button.text()) == "+") {
+        newVal = parseFloat(oldValue) + 1;
+    } else {
+        // Don't allow decrementing below zero
+        if (oldValue > 0) {
+            newVal = parseFloat(oldValue) - 1;
+        } else {
+            newVal = 0;
+        }
+    }
+
+    $input.val(newVal);
+
+    });
+    </script>
+
+</body>
+</html>

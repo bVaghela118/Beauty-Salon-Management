@@ -1,0 +1,399 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Site Metas -->
+    <title>KALLISTAA </title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon"/>
+    <!--    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">-->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Colors CSS -->
+    <link rel="stylesheet" href="{% static 'css/colors.css' %}">
+    <!-- ALL VERSION CSS -->
+    <link rel="stylesheet" href="{% static 'css/versions.css' %}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/prettyPhoto.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/loading.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="barber_version">
+
+<!-- LOADER -->
+<div id="preloader">
+    <div class="cube-wrapper">
+        <div class="cube-folding">
+            <span class="leaf1"></span>
+            <span class="leaf2"></span>
+            <span class="leaf3"></span>
+            <span class="leaf4"></span>
+        </div>
+        <span class="loading" data-name="Loading">KALLISTAA Loading</span>
+    </div>
+</div><!-- end loader -->
+<!-- END LOADER -->
+
+<div id="wrapper">
+
+    <!-- Sidebar-wrapper -->
+    <div id="sidebar-wrapper">
+        <div class="side-top-left">
+            <div class="logo-sidebar">
+                <a href="\index\"><img src="{% static 'images/logos/logo.png' %}" width="285"></a>
+            <ul class="sidebar-nav">
+                            <li class="dropdown">
+
+                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-fw fa-user"></i><b> {{user.username}} </b><i class="fa fa-fw fa-caret"></i><i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown-menu">
+                                    {% if user.is_authenticated %}
+                                    <li>
+                                        <a tabindex="-1" href="\profile\" class="btn btn-light btn-radius btn-brd grd1 effect-1">Profile</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a tabindex="-1" href="\logout\" class="btn btn-light btn-radius btn-brd grd1 effect-1">Logout</a>
+                                    </li>
+                                    {% else %}
+                                    <li>
+                                        <a tabindex="-1" href="\login\" class="btn btn-light btn-radius btn-brd grd1 effect-1">Sign in</a>
+                                    </li>
+                                    <li>
+                                        <a tabindex="-1" href="\register\" class="btn btn-light btn-radius btn-brd grd1 effect-1">Sign Up</a>
+                                    </li>
+                                    {%endif%}
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+				<ul class="sidebar-nav">
+					<li><a  href="\index\" class="active">Home</a></li>
+					<li><a href="\about\">About Us</a></li>
+                    <li><a href="\appointment\">Appointment</a></li>
+                    <li><a href="\barbers\">Our Specialist</a></li>
+                    <li><a href="\servicecategory\">Our Services Categories</a></li>
+                    <li><a href="\membership\">Our Membership</a></li>
+                    <li><a href="\package\">Our Packages</a></li>
+                    <li><a href="\Gallery\">Gallery</a></li>
+                    <li><a href="\Productcategory\">Our Product Categories</a></li>
+                    <li ><a href="\cartdetails\" class ="nav-cart-icon nav-sprite">Add to Cart</a></li>
+				</ul>
+
+			 </div>
+        </div>
+    <!-- End Sidebar-wrapper -->
+    <div class="section lb">
+        <div class="container-fluid">
+            <div class="section-title row text-center">
+                <div class="col-md-8 col-md-offset-2">
+                    <h3>OUR SERVICES</h3>
+                    <hr class="grd1">
+                    <small>VISIT OUR BEST SERVICES</small>
+                    <p class="lead">
+                        ....................................................................................................................</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-content-wrapper">
+            <div class="container">
+                <form method="post">
+                    {% csrf_token %}
+                    {% for i in ser_cat %}
+                    <div class="row dev-list text-center">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 " data-wow-duration="0.5s"
+                             data-wow-delay="0.2s">
+                            <div class="widget clearfix">
+                                <h4>{{i.service_name}}</h4>
+                                <div class="hover-br">
+                                    <img src="{{i.services_url.url}}" alt="Not Found" width="100" height="150"/>
+                                    <div class="social-up-hover">
+                                        <div class="footer-social">
+                                            <h3><B>{{i.service_name}}</B></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4>It takes {{i.service_duration}}&nbsp;&nbsp;&nbsp;&nbsp;Price
+                                    RS:{{i.service_rate}}</h4>
+                                <button class="btn btn-light btn-radius btn-brd grd1"><font color="white"><a href="\appointmenttake\{{i.service_id}}\" class="grd1">Take Service</a></font></button>
+                                <br>
+                                <button class="btn btn-light btn-radius btn-brd grd1 subt"><a href="\contact\{{i.service_id}}\" class="grd1">Give Feedback</a></button>
+                            </div>
+                        </div>
+                    {%endfor%}
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Content -->
+<!--        <div id="page-content-wrapper">-->
+<!--            <a href="#menu-toggle" class="menuopener" id="menu-toggle"><i class="fa fa-bars"></i></a>-->
+<!--			-->
+<!--            <div class="all-page-bar">-->
+<!--				<div class="container">-->
+<!--					<div class="row">-->
+<!--						<div class="col-xs-12 col-sm-12 col-md-12">-->
+<!--							<div class="title title-1 text-center">-->
+<!--								<div class="title&#45;&#45;heading">-->
+<!--									<h1>Our Services</h1>-->
+<!--								</div>-->
+<!--								<div class="clearfix"></div>-->
+<!--								<ol class="breadcrumb">-->
+<!--									<li><a href="index-3.html">Home</a></li>-->
+<!--									<li class="active">Our Services</li>-->
+<!--								</ol>-->
+<!--								<div class="much">-->
+<!--									<img src="{% static 'uploads/mustache.png' %}" alt=""/>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--							&lt;!&ndash; .title end &ndash;&gt;-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>&lt;!&ndash; end all-page-bar &ndash;&gt;-->
+<!--                  {% for serviceCat, range, nslides in allsers %}-->
+<!--                    {% if serviceCat.service_categories_no == serviceCat.service_categories_service_categories_no%}-->
+<!--             <h1 class="my-4"><a href="\service\"> {{serviceCat.0.service_name}}</a></h1>-->
+<!--             <div id="demo{{forloop.counter}}" class="carousel slide my-3" data-ride="carousel">-->
+<!--                 <ul class="carousel-indicators">-->
+<!--                     <li data-target="#demo{{forloop.counter}}" data-slide-to="0" class="active"></li>-->
+<!--                     {% for i in range%}-->
+<!--                     <li data-target="#demo{{forloop.parentloop.counter}}" data-slide-to="{{i}}"></li>-->
+<!--                     {% endfor %}-->
+<!--                 </ul>-->
+<!--             </div>-->
+<!--             {% endif %}-->
+<!--             {% endfor%}-->
+<!--             {% for i in serviceCat %}-->
+<!--             <div>-->
+<!--                  <div id="page-content-wrapper">-->
+<!--                 <a href="salon/servicecategory.html">-->
+<!--&lt;!&ndash;             {% if service.service_categories_service_categories_no == serviceCat.service_categories_no %}&ndash;&gt;-->
+<!--&lt;!&ndash;                  <div id="{{i.service_id}}">{{i.service_name}}</div>&ndash;&gt;-->
+<!--                 <div id="{{i.service_categories_no}}">{{i.service_categories_name}}</div>-->
+<!--&lt;!&ndash;                    <div id="info"><h1>{{service_name}}</h1></div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    {% else %}&ndash;&gt;-->
+<!--&lt;!&ndash;                     {% endif %}&ndash;&gt;-->
+<!--&lt;!&ndash;                     </a>&ndash;&gt;-->
+<!--                 </div>-->
+<!--             </div>-->
+<!--&lt;!&ndash;             <p>Not found</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                        &ndash;&gt;-->
+<!--             {% endfor %}-->
+<!--            <div id="services" class="section lb">-->
+<!--                <div class="container-fluid">-->
+<!--                    <div class="section-title row text-center">-->
+<!--                        <div class="col-md-8 col-md-offset-2">-->
+<!--                        <small>WELCOME TO THE OUR BARBER SHOP</small>-->
+<!--                        <h3>OUR SERVICES</h3>-->
+<!--                        <hr class="grd1">-->
+<!--                        <p class="lead">Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus. Sed a tellus quis mi rhoncus dignissim.</p>-->
+<!--                        </div>-->
+<!--                    </div>&lt;!&ndash; end title &ndash;&gt;-->
+
+<!--                    <div class="row">-->
+<!--                        <div class="col-md-6">-->
+<!--                            <div class="service-wrap clearfix">-->
+<!--                                <img src="{% static 'uploads/barber_service_01.jpg' %}" alt="" class="img-responsive img-rounded alignleft">-->
+<!--                                <h4>beard, mustache care</h4>-->
+<!--                                <p>Etiam materials ut mollis tellus, vel posuere nulla. Etiam sit amet massa sodales aliquam at eget quam. Integer ultricies et magna quis.</p>-->
+<!--                            </div>&lt;!&ndash; end issue &ndash;&gt;-->
+
+<!--                            <div class="service-wrap clearfix">-->
+<!--                                <img src="{% static 'uploads/barber_service_02.jpg' %}" alt="" class="img-responsive img-rounded alignleft">-->
+<!--                                <h4>detailed feather cleaning</h4>-->
+<!--                                <p>Etiam materials ut mollis tellus, vel posuere nulla. Etiam sit amet lacus vitae massa sodales aliquam at eget quam. Integer ultricies et magna quis.</p>-->
+<!--                            </div>&lt;!&ndash; end issue &ndash;&gt;-->
+
+<!--                            <div class="service-wrap lastchild clearfix">-->
+<!--                                <img src="{% static 'uploads/barber_service_03.jpg' %}" alt="" class="img-responsive img-rounded alignleft">-->
+<!--                                <h4>facial and skin care</h4>-->
+<!--                                <p>Etiam materials ut mollis tellus, vel posuere nulla. Etiam sit amet lacus vitae massa sodales aliquam at eget quam. Integer ultricies et magna quis.</p>-->
+<!--                            </div>&lt;!&ndash; end issue &ndash;&gt;-->
+<!--                        </div>&lt;!&ndash; end col &ndash;&gt;-->
+
+<!--                        <div class="col-md-6">-->
+<!--                            <div class="service-wrap clearfix">-->
+<!--                                <img src="{% static 'uploads/barber_service_04.jpg' %}" alt="" class="img-responsive img-rounded alignleft">-->
+<!--                                <h4>studio shots</h4>-->
+<!--                                <p>Etiam materials ut mollis tellus, vel posuere nulla. Etiam sit amet massa sodales aliquam at eget quam. Integer ultricies et magna quis.</p>-->
+<!--                            </div>&lt;!&ndash; end issue &ndash;&gt;-->
+
+<!--                            <div class="service-wrap clearfix">-->
+<!--                                <img src="{% static 'uploads/barber_service_05.jpg' %}" alt="" class="img-responsive img-rounded alignleft">-->
+<!--                                <h4>forming the beard</h4>-->
+<!--                                <p>Etiam materials ut mollis tellus, vel posuere nulla. Etiam sit amet lacus vitae massa sodales aliquam at eget quam. Integer ultricies et magna quis.</p>-->
+<!--                            </div>&lt;!&ndash; end issue &ndash;&gt;-->
+
+<!--                            <div class="service-wrap lastchild clearfix">-->
+<!--                                <img src="{% static 'uploads/barber_service_06.jpg' %}" alt="" class="img-responsive img-rounded alignleft">-->
+<!--                                <h4>hair wash</h4>-->
+<!--                                <p>Etiam materials ut mollis tellus, vel posuere nulla. Etiam sit amet lacus vitae massa sodales aliquam at eget quam. Integer ultricies et magna quis.</p>-->
+<!--                            </div>&lt;!&ndash; end issue &ndash;&gt;-->
+<!--                        </div>&lt;!&ndash; end col &ndash;&gt;-->
+<!--                    </div>-->
+
+<!--                    <hr class="invis4">-->
+
+<!--                    <div class="text-center">-->
+<!--                        <a href="#services" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">APPOINTMENT NOW</a>-->
+<!--                    </div>-->
+<!--                </div>&lt;!&ndash; end container &ndash;&gt;-->
+<!--            </div>&lt;!&ndash; end section &ndash;&gt;-->
+
+<!--            <div id="testimonials" class="parallax section db parallax-off" style="background-image:url('uploads/parallax_20.jpg');">-->
+<!--                <div class="container-fluid">-->
+<!--                    <div class="section-title row text-center">-->
+<!--                        <div class="col-md-8 col-md-offset-2">-->
+<!--                        <small>LET'S SEE OUR TESTIMONIALS</small>-->
+<!--                        <h3>HAPPY TESTIMONIALS</h3>-->
+<!--                        <hr class="grd1">-->
+<!--                        <p class="lead">Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus. Sed a tellus quis mi rhoncus dignissim.</p>-->
+<!--                        </div>-->
+<!--                    </div>&lt;!&ndash; end title &ndash;&gt;-->
+
+<!--                    <div class="row">-->
+<!--                        <div class="col-md-12 col-sm-12">-->
+<!--                            <div class="testi-carousel owl-carousel owl-theme">                                -->
+<!--                                <div class="testimonial clearfix">-->
+<!--                                    <div class="desc">-->
+<!--                                        <h3><i class="fa fa-quote-left"></i> Wonderful Support!</h3>-->
+<!--                                        <p class="lead">They have got my project on time with the competition with a sed highly skilled, and experienced & professional team.</p>-->
+<!--                                    </div>-->
+<!--                                    <div class="testi-meta">-->
+<!--                                        <img src="{% static 'uploads/testi_01.png' %}" alt="" class="img-responsive alignright">-->
+<!--                                        <h4>James Fernando <small>- Manager of Racer</small></h4>-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash; end testi-meta &ndash;&gt;-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash; end testimonial &ndash;&gt;-->
+<!--                                <div class="testimonial clearfix">-->
+<!--                                    <div class="desc">-->
+<!--                                        <h3><i class="fa fa-quote-left"></i> Awesome Services!</h3>-->
+<!--                                        <p class="lead">Explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you completed.</p>-->
+<!--                                    </div>-->
+<!--                                    <div class="testi-meta">-->
+<!--                                        <img src="{% static 'uploads/testi_02.png' %}" alt="" class="img-responsive alignright">-->
+<!--                                        <h4>Jacques Philips <small>- Designer</small></h4>-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash; end testi-meta &ndash;&gt;-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash; end testimonial &ndash;&gt;-->
+<!--                                <div class="testimonial clearfix">-->
+<!--                                    <div class="desc">-->
+<!--                                        <h3><i class="fa fa-quote-left"></i> Great & Talented Team!</h3>-->
+<!--                                        <p class="lead">The master-builder of human happines no one rejects, dislikes avoids pleasure itself, because it is very pursue pleasure. </p>-->
+<!--                                    </div>-->
+<!--                                    <div class="testi-meta">-->
+<!--                                        <img src="{% static 'uploads/testi_03.png' %}" alt="" class="img-responsive alignright">-->
+<!--                                        <h4>Venanda Mercy <small>- Newyork City</small></h4>-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash; end testi-meta &ndash;&gt;-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash; end testimonial &ndash;&gt;-->
+<!--								<div class="testimonial clearfix">-->
+<!--                                    <div class="desc">-->
+<!--                                        <h3><i class="fa fa-quote-left"></i> Great & Talented Team!</h3>-->
+<!--                                        <p class="lead">The master-builder of human happines no one rejects, dislikes avoids pleasure itself, because it is very pursue pleasure. </p>-->
+<!--                                    </div>-->
+<!--                                    <div class="testi-meta">-->
+<!--                                        <img src="{% static 'uploads/testi_03.png' %}" alt="" class="img-responsive alignright">-->
+<!--                                        <h4>Venanda Mercy <small>- Newyork City</small></h4>-->
+<!--                                    </div>-->
+<!--                                    &lt;!&ndash; end testi-meta &ndash;&gt;-->
+<!--                                </div>-->
+<!--                                &lt;!&ndash; end testimonial &ndash;&gt;-->
+<!--                            </div>&lt;!&ndash; end carousel &ndash;&gt;-->
+<!--                        </div>&lt;!&ndash; end col &ndash;&gt;-->
+<!--                    </div>&lt;!&ndash; end row &ndash;&gt;-->
+<!--                </div>&lt;!&ndash; end container &ndash;&gt;-->
+<!--            </div>&lt;!&ndash; end section &ndash;&gt;-->
+<!--            <section class="section nopad cac text-center">-->
+<!--                <a href="#"><h3>Interesting our awesome barber services? Just drop an appointment form below!</h3></a>-->
+<!--            </section>-->
+
+<!--            <div class="copyrights">-->
+<!--                <div class="container-fluid">-->
+<!--                    <div class="footer-distributed">-->
+<!--                        <div class="footer-left">-->
+<!--                            <p class="footer-links">-->
+<!--                                <a href="#">Home</a>-->
+<!--                                <a href="#">Blog</a>-->
+<!--                                <a href="#">Pricing</a>-->
+<!--                                <a href="#">About</a>-->
+<!--                                <a href="#">Faq</a>-->
+<!--                                <a href="#">Contact</a>-->
+<!--                            </p>-->
+<!--                            <p class="footer-company-name">All Rights Reserved. &copy; 2020 <a href="#">KALLISTAA</a></p>-->
+<!--                        </div>-->
+
+<!--                        <div class="footer-right">-->
+<!--                            <form method="get" action="#">-->
+<!--                                <input placeholder="Subscribe our newsletter.." name="search">-->
+<!--                                <i class="fa fa-envelope-o"></i>-->
+<!--                            </form>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>&lt;!&ndash; end container &ndash;&gt;-->
+<!--            </div>&lt;!&ndash; end copyrights &ndash;&gt;-->
+<!--    </div>&lt;!&ndash; end wrapper &ndash;&gt;-->
+
+<a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+<!-- ALL JS FILES -->
+<script src="{% static 'js/all.js' %}"></script>
+<script src="{% static 'js/responsive-tabs.js' %}"></script>
+<!-- ALL PLUGINS -->
+<script src="{% static 'js/custom.js' %}"></script>
+
+<!-- Menu Toggle Script -->
+<script>
+    (function($) {
+        "use strict";
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+        smoothScroll.init({
+            selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
+            selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
+            speed: 500, // Integer. How fast to complete the scroll in milliseconds
+            easing: 'easeInOutCubic', // Easing pattern to use
+            offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
+            callback: function ( anchor, toggle ) {} // Function to run after scrolling
+        });
+    })(jQuery);
+
+</script>
+
+</body>
+</html>
