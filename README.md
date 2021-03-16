@@ -1,1 +1,1 @@
-# Beauty-and-Salon-Management
+# Beauty-Salon-Management
